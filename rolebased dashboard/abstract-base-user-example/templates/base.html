@@ -1,0 +1,65 @@
+<!--================================Here we loading the static files by decalring the syntx==================-->
+{% load staticfiles %}
+<!--========================================================================================================-->
+<!DOCTYPE html>
+<html>
+<head>
+<!---===================================Loading the Data from the other page Tag==========================-->
+ <!--==================================Start of the Block Title=========================================-->
+  <title>
+
+  								{% block title %}
+
+
+
+  								{% endblock %}</title>
+<!---===================================Ending of the Block Title=========================-->
+
+<!--=====================================Linking the CSS Files================================-->
+  <link href='{% static "styles/base.css" %}'rel="stylesheet">
+<!--=========================================================================================-->
+<!--========================================================Bootstrap CDN 3.3.7 Version============================================================-->
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!--==================================================================================================================================-->
+
+
+</head>
+<body>
+
+<!--=================================================Dashboard Creation====================================================-->
+   <!--=================================================Bootstrap Navigation==================================================-->	
+         
+<!--==================================================Bootstrap Navigation===============================================================================-->
+   <div id="header">
+    <span class="logo"><font size="4px">Khetra</span></font>
+    {% if request.users.is_authenticated %}
+      <ul class="menu">
+        <li {% if section == "dashboard" %}class="selected"{% endif %}>
+          <a href='{% url "dashboard" %}'>My dashboard</a>
+        </li>
+       
+      </ul>
+    {% endif %}
+<!--======================================Here Dashboard Creation Endede=======================================================-->
+<!--=====================================HERE Activation of the login and Logout Button we deciding means when at dasboard seeing Logout other wise showing login=====-->
+     <span class="user">
+      {% if request.user.is_authenticated %}
+        Hello {{users_customuser.email}},
+        <a href='{% url "logout" %}'>Logout</a>
+      {% else %}
+        <a href='{% url "login" %}'><font size="4px">Log-in</a>
+      {% endif %}
+    </span>
+  </div>
+  
+<!--==========================Here the content File start which body is field by another body=================-->
+    			{% block content %}
+    				
+
+    				{% endblock %}
+<!--============Here the End of the Block which is filed by another template which inherit this template-->
+  </div>
+
+</body>
+</html>

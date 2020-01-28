@@ -1,0 +1,180 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Startmin - Bootstrap Admin Theme</title>
+
+		<!-- Latest compiled and minified CSS -->
+    <!-- Latest compiled and minified CSS -->
+
+
+<!-- Latest compiled and minified JavaScript -->
+
+        <!-- Bootstrap Core CSS -->
+	
+        <link href="{% static 'styles/bootstrap.min.css' %}" rel="stylesheet">
+
+        <!-- MetisMenu CSS -->
+        <link href="{% static 'styles/metisMenu.min.css'%}" rel="stylesheet">
+
+        <!-- Timeline CSS -->
+        <link href="{%static 'styles/timeline.css'%}" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="{% static 'styles/startmin.css'%}" rel="stylesheet">
+
+        <!-- Morris Charts CSS -->
+        <link href="{% static 'styles/morris.css' rel="stylesheet">
+
+        <!-- Custom Fonts -->
+        <link href="{% static 'styles/font-awesome.min.css'%}" rel="stylesheet" type="text/css">
+<!--==========================================For the Support of the Lower Version of IE--=====================================================-->
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        </head>
+    <body>
+                <div id="wrapper">
+
+<!--======================================Navigation Part Button will added===================================================================-->
+                <nav class="navbar navbar-inverse navbar navbar-fixed-top" role="navigation">
+                <!--<div class="navbar-header">-->
+		<!--========================================Titile for navigation=====================================================================-->
+                    <!--<a class="navbar-brand" href="index.html"><font size="30px">Khetra</a></font>
+                </div>-->
+<!--=====================================Toggle Navigation Linking==========================================================================-->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+        <!--=====================================The above two line create the toogle button only=====================================-->
+                    </button>
+                     <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                     <span class="icon-bar"></span>
+                </button>
+<!--================================================Creating icon at the Left=====================================================================-->
+            <ul class="nav navbar-nav navbar-left navbar-top-links">
+                    <li><a href="#"><font size="5px"><i class="fa fa-home fa-fw"></i> Admin Panel</a></font></li>
+                </ul>
+<!--===================================================Creating Menu at the Right Hand Side======================================================-->
+             <ul class="nav navbar-right navbar-top-links">
+                   
+                <!--==========================================Bell Icon Creation=========================================-->
+                          
+<!--============================================Adding all the Drop Down to the bell Icon=========================================================-->
+<!--==============================================Adding All the User Icon========================================================================-->
+                   <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-user fa-fw"></i>
+                         <font size="4px">{% if request.user.is_authenticated %}
+											Welcome {{ request.user.email }} </font><b class="caret"></b>
+								
+						{% endif %}
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                           
+                            
+                            <li> <a href="{% url 'logout' %}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+               </nav>
+<!---============================================Completed Nav Bar===============================================================================-->
+<!--=======================================================Side Bar Making===================================-->
+
+                <div class="navbar-panel-primary sidebar" role="navigation"style="width:290px;">
+                    <div class="sidebar-nav navbar-collapse">
+              <!--Here we define style also-->
+                        <ul class="nav" id="side-menu" >
+                            <li class="sidebar-search">
+                            	<img src="{% static 'img/khetra_2.png' %}" width="280px" height="120px"class="img-circle">
+                               
+                                 </li>
+                            <li>
+<!--=============================================================================SIDE BAR DASH BOARD=====================================-->
+                                <a href=""{% url 'login_success' %}"" class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard </a>
+                            </li>
+<!--==================================================================Rates Card========================================================-->
+								
+                               
+                                </ul>
+                                <!-- /.nav-second-level -->
+                            </li>
+                               </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+<!--==================================================================End of the Rate Card Design==========================================-->
+                            
+<!--==========================================================End of Side Bar============================================-->
+<!--Side Bar Naviagtion end Here-->
+            <div id="page-wrapper" style="margin-left:290px;">
+<!--============================================================Here we giving the margin from the left==================================-->
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1 class="page-header">Dashboardfor employye(role)</h1>
+                        </div>
+                    </div>
+                </div>
+<!--===============================================================Dashoboard Heading in the Body=====================================-->
+  <!-- /.row -->
+  <!--=============================================================First Heading Listing=====================================-->
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <div class="col-xs-3">
+                                            <i class="fa fa-comments fa-5x"></i>
+                                        </div>
+                                        <div class="col-xs-9 text-left">
+                                            <div class="huge">Pricing Card</div>
+                                        </div>
+                                    </div>
+                                </div>
+               <!--==============================================End of the First Heading Top Part====================================-->
+               <a href="#">
+                                    <div class="panel-footer">
+                                        <a href="http://pricing-project1.appspot.com/"><span class="pull-left"><h4>Click to Visit</h4></span>
+                                        <span class="pull-right"><h4><i class="fa fa-arrow-circle-right"></h4></i></span><a>
+
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </a>
+                <!--=====================================End of the Bottom Heading Second Part=======================================-->
+                 </div>
+                        </div>
+                      
+<!---===================================================Scripting===================================================================-->
+ 
+ 
+        <script src="{% static 'js/jquery.min.js'%}"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src='{% static "js/bootstrap.min.js" %}'></script>
+		<!-- Metis Menu Plugin JavaScript -->
+        <script src="{% static 'js/metisMenu.min.js' %}"></script>
+		
+		  <!-- Morris Charts JavaScript -->
+        <script src="{% static 'js/raphael.min.js'%}"></script>
+		
+		 <script src="{% static 'js/morris.min.js'%}"></script>
+		<!--====================================================
+        
+
+        <!-- Custom Theme JavaScript -->
+        <script src="{% static 'js/startmin.js'%}"></script>
+ 
+
+        

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+<!--=========================Here the Above tag inheriting the base.html=======================-->
+<!--========================Here the inheriting Block title was named in child page that tag define in parent utiize in the child-->
+{% block title %}Logged out{% endblock %}
+<!--==============================End of the Block Tag for the titile which is being filed by the child page===================================-->
+<!--===========================================================================================================================================-->
+<!--================================Second Block and define in the parent page and utilize in the child page===================================-->
+{% block content %}
+  <h1>Logged out</h1>
+ <!--=================================================Here we Linking the login text to login view so that we redirect to login section===---->
+  <p>You have been successfully logged out. You can <a href='{% url "login" %}'>log-in again</a>.</p>
+{% endblock %}

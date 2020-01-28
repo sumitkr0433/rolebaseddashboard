@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+<!--=========================Here the Above tag inheriting the base.html=======================-->
+{% load crispy_forms_tags %}
+<!--======================================Loading the crispy forms===================================-->
+<!--========================Here the inheriting Block title was named in child page that tag define in parent utiize in the child-->
+{% block title %}Log-in{% endblock %}
+
+{% block content %}
+{% load static %}
+<!--==============================End of the Block Tag for the titile which is being filed by the child page===================================-->
+<!--===========================================================================================================================================-->
+  <h1><center>Welcome to KhetraAgritech</h1></center>
+<!--==============================Here we prinint the error in the case if the form has error===========================================-->
+ 
+<!--================================================Here the if else condition of the error end====================================-->
+ 
+	
+	 <!-- Bootstrap Core CSS -->
+        <link href="{% static 'styles/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- MetisMenu CSS -->
+        <link href="{% static 'styles/metisMenu.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="{% static 'styles/startmin.css' rel="stylesheet">
+
+        <!-- Custom Fonts -->
+        <link href="{% static 'styles/font-awesome.min.css" rel="stylesheet" type="text/css">
+	
+
+ 
+<!--========================================================Writing the Own Class========================================================-->
+<div class="container">
+            <div class="row">
+                <div class="col-md-5 col-md-offset-3">
+                    <div class="login-panel panel default-panel">
+                       
+  
+  
+  
+    
+                            <h2 class="panel-title"><center><img src="{% static 'img/khetra_2.png' %}" alt="" width="400px"></center></h2>
+                        
+						</div>
+						
+						
+						
+							
+		
+						
+<!--=====================Here we writing the form tag and attributes here login views get called when submitting the form====-->
+    <form action="{% url 'login' %}" method="post">
+<!--========================================Here we fetching the form=======================================================-->
+      {{ form|crispy }}
+      {% csrf_token %}
+<!--======== Note that we have added a hidden HTML <input> element to submit the value of a variable called next. This variable is first set by the login view when you pass a next parameter in the request (For example, =========-->
+       <br>
+       <input type="hidden" name="next" value="{{ next }}" /><br>
+      <p><br><input type="submit" value="Log-in"class="btn btn-lg btn-success btn-block">
+    </form>
+   <p><a href='{% url "password_reset" %}'><b>Forget your  password?</a></p></b>
+{% endblock %}
+
+<!-- Footer -->
+<footer class="page-footer font-small blue">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
